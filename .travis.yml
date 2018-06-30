@@ -1,0 +1,18 @@
+language: java
+install: true
+
+jdk:
+  - oraclejdk8
+
+branches:
+  only:
+    - master
+    - develop
+    - demo
+
+#notifications:
+#  email:
+#    - mail@example.com
+
+script:
+  - gradle test --info

@@ -1,0 +1,28 @@
+group = 'de.uni_passau.ieee.gradle_ci_demo'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    //enable compilation in a separate daemon process
+    options.fork = true
+
+    //enable incremental compilation
+    options.incremental = true
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'de.uni_passau.ieee.gradle_ci_demo.Main'
+    }
+}
+
+defaultTasks 'build'
