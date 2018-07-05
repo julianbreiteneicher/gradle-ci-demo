@@ -7,6 +7,6 @@ public class Dog implements Animal{
 
     @Override
     public String makeNoise() {
-        return "Meow!";
+        return "Woof!";
     }
 }
